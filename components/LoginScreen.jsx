@@ -37,7 +37,7 @@ const LoginScreen = ({ navigation }) => {
   
         if (response.ok) {
           console.log("✅ Token received:", data.token);
-          await AsyncStorage.setItem("userToken", data.token); // <--- IMPORTANT
+          await AsyncStorage.setItem("userToken", data.token);
           setIsLoggedIn(true);
           setToken(data.token);
           navigation.navigate("Home");

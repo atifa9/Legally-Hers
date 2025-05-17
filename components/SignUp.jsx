@@ -46,9 +46,9 @@ const SignUpScreen = ({ navigation }) => {
     
           if (response.ok) {
            
-            await AsyncStorage.setItem("userToken", data.token); // <--- IMPORTANT
+            await AsyncStorage.setItem("userToken", data.token); 
             setIsLoggedIn(true);
-            setToken(data.token); // 🔐 Save JWT
+            setToken(data.token);
             navigation.navigate("Home");
           } else {
             alert(data.message || "Something went wrong. Please try again.");

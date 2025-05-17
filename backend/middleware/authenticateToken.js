@@ -9,19 +9,19 @@ const protect = async (req, res, next) => {
   if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
     try {
       token = req.headers.authorization.split(" ")[1];
-      console.log("🔐 Received Token:", token); 
+      console.log(" Received Token:", token); 
 
       if (!JWT_SECRET) {
         return res.status(500).json({ message: "Server error: JWT_SECRET is not defined" });
       }
 
       const decoded = jwt.verify(token, JWT_SECRET);
-      console.log("✅ Decoded Token:", decoded);
+      console.log(" Decoded Token:", decoded);
 
-      // Attach decoded payload to request
+     
       req.user = decoded;
 
-      next(); // Move to the next middleware/route
+      next();
     } catch (err) {
       if (err.name === "TokenExpiredError") {
         return res.status(401).json({ message: "Token has expired" });
