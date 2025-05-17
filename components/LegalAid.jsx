@@ -109,8 +109,8 @@ const styles = StyleSheet.create({
     elevation: 4,
     alignItems: 'center',
     justifyContent: 'center',
-    position: 'absolute', // Positioning it absolutely within the card
-    right: width * 0.04,   // Keeping it on the right side of the purple rectangle
+    position: 'absolute', 
+    right: width * 0.04,   
   
   },
 

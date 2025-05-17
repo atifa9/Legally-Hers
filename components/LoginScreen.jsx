@@ -25,7 +25,7 @@ const LoginScreen = ({ navigation }) => {
   const handleLogin = async () => {
     if (isFormValid) {
       try {
-        const response = await fetch("http://192.168.1.222:5000/api/auth/login", {
+        const response = await fetch("http://you wifi ip:5000/api/auth/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -37,7 +37,7 @@ const LoginScreen = ({ navigation }) => {
   
         if (response.ok) {
           console.log("✅ Token received:", data.token);
-          await AsyncStorage.setItem("userToken", data.token);
+          await AsyncStorage.setItem("userToken", data.token); 
           setIsLoggedIn(true);
           setToken(data.token);
           navigation.navigate("Home");

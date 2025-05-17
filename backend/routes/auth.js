@@ -52,6 +52,7 @@ router.post("/register", async (req, res) => {
       },
     });
   } catch (err) {
+     console.error("Register Error:", err); 
     res.status(500).json({ message: "Server error" });
   }
 });
@@ -109,6 +110,58 @@ router.get("/account-info", protect, async (req, res) => {
   }
 });
 
+// Update Profile Route (for profile updates)
+router.put("/update-profile", protect, async (req, res) => {
+  const { firstName, lastName, username, email, gender } = req.body;
 
+  try {
+    console.log("JWT_SECRET in update-profile route:", JWT_SECRET);
+    const updatedUser = await User.findByIdAndUpdate(
+      req.user.userId,
+      { firstName, lastName, username, email, gender },
+      { new: true }
+    );
+
+    res.status(200).json({
+      success: true,
+      message: "Profile updated successfully",
+      user: {
+        username: updatedUser.username,
+        email: updatedUser.email,
+        firstName: updatedUser.firstName,
+        lastName: updatedUser.lastName,
+        gender: updatedUser.gender,
+      },
+    });
+  } catch (err) {
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+// Update Password Route
+router.put("/change-password", protect, async (req, res) => {
+  const { oldPassword, newPassword } = req.body;
+
+  try {
+    const user = await User.findById(req.user.userId);
+    if (!user) return res.status(400).json({ message: "User not found" });
+
+    // Check if the old password matches
+    const isMatch = await bcrypt.compare(oldPassword, user.password);
+    if (!isMatch)
+      return res.status(400).json({ message: "Old password is incorrect" });
+
+    // Hash the new password and save it
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    user.password = hashedPassword;
+    await user.save();
+
+    res.status(200).json({
+      message: "Password updated successfully",
+    });
+  } catch (err) {
+    res.status(500).json({ message: "Server error" });
+  }
+});
 
 module.exports = router;

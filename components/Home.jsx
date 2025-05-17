@@ -3,20 +3,20 @@ import { SafeAreaView, View, ScrollView, TouchableOpacity, Text, Image, StyleShe
 import { useNavigation } from '@react-navigation/native';
 import StatusBar from './StatusBar';
 import BackButton from './BackButton';
-import { useAuth } from './AuthContext'; 
+import { useAuth } from './AuthContext'; // Import the AuthContext
 
 const { width, height } = Dimensions.get('window');
 
 export default () => {
   const navigation = useNavigation();
-  const { isLoggedIn } = useAuth(); 
+  const { isLoggedIn } = useAuth(); // Get the login status from context
 
   const handleAccountDrawerPress = () => {
    
     if (isLoggedIn) {
-      navigation.openDrawer(); 
+      navigation.openDrawer(); // Open the drawer if logged in
     } else {
-    
+     
       setTimeout(() => {
         Alert.alert(
           "Login Required",

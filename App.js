@@ -1,5 +1,5 @@
 // App.js
-
+import React from 'react';
 import 'react-native-reanimated';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -10,11 +10,16 @@ import Welcome from './components/Welcome';
 import LoginScreen from './components/LoginScreen';
 import SignUp from './components/SignUp';
 import Home from './components/Home';
-import LegalAid from './components/LegalAid';
+import AccountDrawer from './components/AccountDrawer';
+import Accinfo from './components/Accinfo';
+import Accplan from './components/Accplan';
+import Setting from './components/Setting';
+import SavedConvo from './components/SavedConvo';
 import Premium from './components/Premium';
+import ChatBot from './components/ChatBot';
+import LegalAid from './components/LegalAid';
 import Rights from './components/Rights';
 import LawScreen from './components/LawScreen';
-
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -22,13 +27,18 @@ const Drawer = createDrawerNavigator();
 const DrawerScreens = () => (
   <Drawer.Navigator
     screenOptions={{ headerShown: false }}
-   >
+    drawerContent={(props) => <AccountDrawer {...props} />}
+  >
     <Drawer.Screen name="Home" component={Home} />
-    <Drawer.Screen name="LegalAid" component={LegalAid} />
     <Drawer.Screen name="Premium" component={Premium} />
-    <Stack.Screen name="Rights" component={Rights} />
-     <Drawer.Screen name="LawScreen" component={LawScreen} />
-   
+    <Drawer.Screen name="ChatBot" component={ChatBot} />
+    <Drawer.Screen name="LegalAid" component={LegalAid} />
+    <Drawer.Screen name="Rights" component={Rights} />
+    <Drawer.Screen name="LawScreen" component={LawScreen} />
+    <Drawer.Screen name="Accinfo" component={Accinfo} />
+    <Drawer.Screen name="Accplan" component={Accplan} />
+    <Drawer.Screen name="Setting" component={Setting} />
+    <Drawer.Screen name="SavedConvo" component={SavedConvo} />
   </Drawer.Navigator>
 );
 
@@ -45,12 +55,11 @@ const MainNavigation = () => {
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
           <Stack.Screen name="SignUp" component={SignUp} />
           <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Premium" component={Premium} />
+          <Stack.Screen name="ChatBot" component={ChatBot} />
           <Stack.Screen name="LegalAid" component={LegalAid} />
-           <Stack.Screen name="Premium" component={Premium} />
-            <Stack.Screen name="Rights" component={Rights} />
-            <Stack.Screen name="LawScreen" component={LawScreen} />
-          
-          
+          <Stack.Screen name="Rights" component={Rights} />
+          <Stack.Screen name="LawScreen" component={LawScreen} />
         </Stack.Navigator>
       )}
     </NavigationContainer>

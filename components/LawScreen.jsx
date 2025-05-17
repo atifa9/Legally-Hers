@@ -32,7 +32,7 @@ export default function LawScreen({ route }) {
 
     const fetchData = async () => {
       try {
-        const res = await fetch(`http://192.168.1.222:5000/api/laws/${apiEndpoint}`);
+        const res = await fetch(`http://you wifi ip:5000/api/laws/${apiEndpoint}`);
         const data = await res.json();
 
         const formattedRights = (data.rights || []).map(item =>

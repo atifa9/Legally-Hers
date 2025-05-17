@@ -30,7 +30,7 @@ const Welcome = ({ navigation }) => {
       <ScrollView style={{ flex: 1, backgroundColor: "#FF2D88" }}>
         <StatusBar />
 
-        {/* Animated Banner Image */}
+        
         <Animated.Image
           source={{ uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/IfI5TQHHAx/lh1me9a3_expires_30_days.png" }}
           resizeMode="stretch"

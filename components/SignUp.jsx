@@ -34,7 +34,7 @@ const SignUpScreen = ({ navigation }) => {
     const handleSignUp = async () => {
       if (isFormValid) {
         try {
-          const response = await fetch("http://192.168.1.222:5000/api/auth/register", {
+          const response = await fetch("http://you wifi ip:5000/api/auth/register", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -47,8 +47,7 @@ const SignUpScreen = ({ navigation }) => {
           if (response.ok) {
            
             await AsyncStorage.setItem("userToken", data.token); 
-            setIsLoggedIn(true);
-            setToken(data.token);
+            setToken(data.token); // 🔐 Save JWT
             navigation.navigate("Home");
           } else {
             alert(data.message || "Something went wrong. Please try again.");
