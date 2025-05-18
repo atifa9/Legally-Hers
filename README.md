@@ -32,6 +32,16 @@
 - 📅 Conversations grouped by date
 - 🌍 Ready for future localization and voice features
 
+ ## 🪙 Premium Features
+
+> Unlock enhanced legal empowerment with premium tools designed for critical real-life situations.
+
+* 👩‍⚖️ **Consult a Lawyer** – Schedule one-on-one virtual consultations with verified legal experts for personalized legal advice.
+* 🧾 **Store Evidence Securely** – Upload and securely store sensitive **photos and videos** related to your case, encrypted and accessible only to you.
+* 🧑‍💼 **Connect with Advocates** – Get matched with local, verified advocates based on your legal needs and location, with options for follow-up support.
+* 🛡️ **Enhanced Data Privacy** – Advanced encryption and secure storage protocols to ensure your legal data stays private.
+
+
 ---
 
 ## 🛠 Tech Stack
@@ -88,11 +98,11 @@ legallyhers/
 │   ├── assets/
 │   └── .env
 ├── legallyhers-backend/         # Node.js + Express Backend
-│   ├── index.js
+│   ├── server.js
 │   ├── routes/
 │   ├── models/
 │   ├── middleware/
-│   └── .env
+
 ```
 
 ---
