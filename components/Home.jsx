@@ -25,18 +25,18 @@ export default () => {
     }
   };
 
-  // Function to handle premium feature access
+ 
   const handleConsultLawyerPress = () => {
   if (isPremium) {
-    navigation.navigate('Lawyers');  // Screen for consulting a lawyer
+    navigation.navigate('Lawyers');  
   } else {
     Alert.alert("Premium Feature", "Unlock this feature after upgrading 🔒", [{ text: "OK" }]);
   }
 };
 
-const handleCaseTrackerPress = () => {
+const handleEvidencePress = () => {
   if (isPremium) {
-    navigation.navigate('CaseTracker');  // Screen for case tracker
+    navigation.navigate('Evidence');  
   } else {
     Alert.alert("Premium Feature", "Unlock this feature after upgrading 🔒", [{ text: "OK" }]);
   }
@@ -44,7 +44,7 @@ const handleCaseTrackerPress = () => {
 
 const handleChatWithAdvocatesPress = () => {
   if (isPremium) {
-    navigation.navigate('Advocates');  // Screen for chat with advocates
+    navigation.navigate('Advocates');  
   } else {
     Alert.alert("Premium Feature", "Unlock this feature after upgrading 🔒", [{ text: "OK" }]);
   }
@@ -125,13 +125,13 @@ const handleChatWithAdvocatesPress = () => {
           </TouchableOpacity>
 
           {/* Rectangle Purple 2 */}
-          <TouchableOpacity style={styles.rectangleButtonPurple} onPress={handleCaseTrackerPress}>
+          <TouchableOpacity style={styles.rectangleButtonPurple} onPress={handleEvidencePress}>
             <Image
               source={{ uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/IfI5TQHHAx/e52hcmod_expires_30_days.png" }}
               resizeMode={"stretch"}
               style={styles.imageSmall}
             />
-            <Text style={styles.text5}>{"Case Tracker"}</Text>
+            <Text style={styles.text5}>{"Store Evidence"}</Text>
           </TouchableOpacity>
 
           {/* Rectangle Purple 3 */}
