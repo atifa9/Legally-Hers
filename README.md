@@ -194,5 +194,9 @@ Change IP address to your own IP address.
 - 📴 Offline content for rural regions
 
 ---
-APP VIDEO 
+
+
+https://github.com/user-attachments/assets/acaed993-fde7-4bac-a3e8-14c33ed4aeaa
+
+
 
