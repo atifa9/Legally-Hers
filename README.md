@@ -91,6 +91,7 @@ legallyhers/
 │   ├── index.js
 │   ├── routes/
 │   ├── models/
+│   ├── middleware/
 │   └── .env
 ```
 
