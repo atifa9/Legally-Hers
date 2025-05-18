@@ -73,7 +73,7 @@ export default () => {
   const handleProfileUpdate = async () => {
     try {
       console.log("Sending token:", token); 
-      const response = await fetch("http://your wifi ip:5000/api/auth/update-profile", {
+      const response = await fetch("http://YOUR WIFI IP:5000/api/auth/update-profile", {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

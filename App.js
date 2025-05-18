@@ -21,6 +21,8 @@ import LegalAid from './components/LegalAid';
 import Rights from './components/Rights';
 import LawScreen from './components/LawScreen';
 import Lawyers from './components/Lawyers';
+import Advocates from './components/Advocates';
+import { advanceAnimationByFrame } from 'react-native-reanimated';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -41,6 +43,8 @@ const DrawerScreens = () => (
     <Drawer.Screen name="Setting" component={Setting} />
     <Drawer.Screen name="SavedConvo" component={SavedConvo} />
     <Drawer.Screen name="Lawyers" component={Lawyers} />
+    <Drawer.Screen name="Advocates" component={Advocates} />
+   
   </Drawer.Navigator>
 );
 
@@ -63,6 +67,8 @@ const MainNavigation = () => {
           <Stack.Screen name="Rights" component={Rights} />
           <Stack.Screen name="LawScreen" component={LawScreen} />
           <Stack.Screen name="Lawyers" component={Lawyers} />
+           <Stack.Screen name="Advocates" component={Advocates} />
+   
         </Stack.Navigator>
       )}
     </NavigationContainer>

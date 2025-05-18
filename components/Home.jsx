@@ -44,7 +44,7 @@ const handleCaseTrackerPress = () => {
 
 const handleChatWithAdvocatesPress = () => {
   if (isPremium) {
-    navigation.navigate('ChatWithAdvocates');  // Screen for chat with advocates
+    navigation.navigate('Advocates');  // Screen for chat with advocates
   } else {
     Alert.alert("Premium Feature", "Unlock this feature after upgrading 🔒", [{ text: "OK" }]);
   }
@@ -141,7 +141,7 @@ const handleChatWithAdvocatesPress = () => {
               resizeMode={"stretch"}
               style={styles.imageSmall}
             />
-            <Text style={styles.text5}>{"Chat with \nadvocates"}</Text>
+            <Text style={styles.text5}>{"Connect with \nadvocates"}</Text>
           </TouchableOpacity>
 
         </View>
