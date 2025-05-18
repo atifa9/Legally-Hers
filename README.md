@@ -10,6 +10,7 @@
 ## 🔗 Table of Contents
 
 - [🚀 Features](#-features)
+-  [🪙 Premium Features](#-Premium Features)
 - [🛠 Tech Stack](#-tech-stack)
 - [🔐 Authentication & Security](#-authentication--security)
 - [🧠 AI Integration](#-ai-integration)
@@ -18,7 +19,6 @@
 - [📱 UI/UX Highlights](#-uiux-highlights)
 - [🎯 Vision & Impact](#-vision--impact)
 - [🤝 Team & Collaboration](#-team--collaboration)
-- [📝 License](#-license)
 
 ---
 
