@@ -154,10 +154,12 @@ MONGO_URI=your_mongodb_connection_string
 
 ```bash
 # Start the server
-node index.js
+node server.js
 
-# (Optional) Use Ngrok for public access
-ngrok http 5000
+# to run app in your phone using expo go app from playstore: type in terminal:
+npx expo start
+scan the qr code using your mobile.
+
 ```
 Change IP address to your own IP address.
 ---
