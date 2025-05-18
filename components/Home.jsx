@@ -9,14 +9,12 @@ const { width, height } = Dimensions.get('window');
 
 export default () => {
   const navigation = useNavigation();
-  const { isLoggedIn } = useAuth(); // Get the login status from context
+  const { isLoggedIn, isPremium } = useAuth(); // Added isPremium here
 
   const handleAccountDrawerPress = () => {
-   
     if (isLoggedIn) {
       navigation.openDrawer(); // Open the drawer if logged in
     } else {
-     
       setTimeout(() => {
         Alert.alert(
           "Login Required",
@@ -27,26 +25,49 @@ export default () => {
     }
   };
 
+  // Function to handle premium feature access
+  const handleConsultLawyerPress = () => {
+  if (isPremium) {
+    navigation.navigate('Lawyers');  // Screen for consulting a lawyer
+  } else {
+    Alert.alert("Premium Feature", "Unlock this feature after upgrading 🔒", [{ text: "OK" }]);
+  }
+};
+
+const handleCaseTrackerPress = () => {
+  if (isPremium) {
+    navigation.navigate('CaseTracker');  // Screen for case tracker
+  } else {
+    Alert.alert("Premium Feature", "Unlock this feature after upgrading 🔒", [{ text: "OK" }]);
+  }
+};
+
+const handleChatWithAdvocatesPress = () => {
+  if (isPremium) {
+    navigation.navigate('ChatWithAdvocates');  // Screen for chat with advocates
+  } else {
+    Alert.alert("Premium Feature", "Unlock this feature after upgrading 🔒", [{ text: "OK" }]);
+  }
+};
+
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#121212" }}>
       <StatusBar />
-     
-
       <View style={styles.topRow}>
-  {!isLoggedIn ? <BackButton /> : null}
-  <View style={{ flex: 1 }} />
-  <TouchableOpacity style={styles.goPremiumButton} onPress={() => navigation.navigate('Premium')}>
-    <Text style={styles.goPremiumText}>{"Go Premium"}</Text>
-  </TouchableOpacity>
-  <TouchableOpacity onPress={handleAccountDrawerPress}>
-    <Image
-      source={{ uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/IfI5TQHHAx/c30y0vmg_expires_30_days.png" }}
-      resizeMode={"stretch"}
-      style={styles.smallIcon}
-    />
-  </TouchableOpacity>
-</View>
-
+        {!isLoggedIn ? <BackButton /> : null}
+        <View style={{ flex: 1 }} />
+        <TouchableOpacity style={styles.goPremiumButton} onPress={() => navigation.navigate('Premium')}>
+          <Text style={styles.goPremiumText}>{"Go Premium"}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleAccountDrawerPress}>
+          <Image
+            source={{ uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/IfI5TQHHAx/c30y0vmg_expires_30_days.png" }}
+            resizeMode={"stretch"}
+            style={styles.smallIcon}
+          />
+        </TouchableOpacity>
+      </View>
 
       <ScrollView contentContainerStyle={{ flexGrow: 1, backgroundColor: "#121212" }}>
         <Text style={styles.helloText}>{"Hello,"}</Text>
@@ -94,7 +115,7 @@ export default () => {
           </View>
 
           {/* Rectangle Purple 1 */}
-          <TouchableOpacity style={styles.rectangleButtonPurple} onPress={() => alert('Unlock this feature after upgrading 🔒')}>
+          <TouchableOpacity style={styles.rectangleButtonPurple} onPress={handleConsultLawyerPress}>
             <Image
               source={{ uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/IfI5TQHHAx/a6tty6e4_expires_30_days.png" }}
               resizeMode={"stretch"}
@@ -104,7 +125,7 @@ export default () => {
           </TouchableOpacity>
 
           {/* Rectangle Purple 2 */}
-          <TouchableOpacity style={styles.rectangleButtonPurple} onPress={() => alert('Unlock this feature after upgrading 🔒')}>
+          <TouchableOpacity style={styles.rectangleButtonPurple} onPress={handleCaseTrackerPress}>
             <Image
               source={{ uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/IfI5TQHHAx/e52hcmod_expires_30_days.png" }}
               resizeMode={"stretch"}
@@ -114,7 +135,7 @@ export default () => {
           </TouchableOpacity>
 
           {/* Rectangle Purple 3 */}
-          <TouchableOpacity style={styles.rectangleButtonPurple} onPress={() => alert('Unlock this feature after upgrading 🔒')}>
+          <TouchableOpacity style={styles.rectangleButtonPurple} onPress={handleChatWithAdvocatesPress}>
             <Image
               source={{ uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/IfI5TQHHAx/8kc1qo0z_expires_30_days.png" }}
               resizeMode={"stretch"}

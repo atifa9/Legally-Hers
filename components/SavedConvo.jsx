@@ -16,7 +16,7 @@ export default function ConversationHistoryScreen() {
 
   useEffect(() => {
     if (token) {
-      fetch("http://you wifi ip:5000/api/chat/history", {
+      fetch("http://YOUR WIFI IP:5000/api/chat/history", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

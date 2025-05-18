@@ -34,7 +34,7 @@ const SignUpScreen = ({ navigation }) => {
     const handleSignUp = async () => {
       if (isFormValid) {
         try {
-          const response = await fetch("http://you wifi ip:5000/api/auth/register", {
+          const response = await fetch("http://YOUR WIFI IP:5000/api/auth/register", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

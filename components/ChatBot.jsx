@@ -26,7 +26,7 @@ export default function ChatScreen() {
     Keyboard.dismiss();
 
     try {
-      const res = await fetch("http://you wifi ip:5000/api/chat", {
+      const res = await fetch("http://YOUR WIFI IP:5000/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

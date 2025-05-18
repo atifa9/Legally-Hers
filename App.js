@@ -20,6 +20,7 @@ import ChatBot from './components/ChatBot';
 import LegalAid from './components/LegalAid';
 import Rights from './components/Rights';
 import LawScreen from './components/LawScreen';
+import Lawyers from './components/Lawyers';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -39,6 +40,7 @@ const DrawerScreens = () => (
     <Drawer.Screen name="Accplan" component={Accplan} />
     <Drawer.Screen name="Setting" component={Setting} />
     <Drawer.Screen name="SavedConvo" component={SavedConvo} />
+    <Drawer.Screen name="Lawyers" component={Lawyers} />
   </Drawer.Navigator>
 );
 
@@ -60,6 +62,7 @@ const MainNavigation = () => {
           <Stack.Screen name="LegalAid" component={LegalAid} />
           <Stack.Screen name="Rights" component={Rights} />
           <Stack.Screen name="LawScreen" component={LawScreen} />
+          <Stack.Screen name="Lawyers" component={Lawyers} />
         </Stack.Navigator>
       )}
     </NavigationContainer>

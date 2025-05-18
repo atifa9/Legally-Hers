@@ -16,7 +16,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 const LoginScreen = ({ navigation }) => {
-  const { setIsLoggedIn, setToken } = useAuth();
+  const { setIsLoggedIn, setToken,setIsPremium} = useAuth();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -25,7 +25,7 @@ const LoginScreen = ({ navigation }) => {
   const handleLogin = async () => {
     if (isFormValid) {
       try {
-        const response = await fetch("http://you wifi ip:5000/api/auth/login", {
+        const response = await fetch("http://YOUR WIFI IP:5000/api/auth/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -40,6 +40,11 @@ const LoginScreen = ({ navigation }) => {
           await AsyncStorage.setItem("userToken", data.token); 
           setIsLoggedIn(true);
           setToken(data.token);
+          if (data.user && data.user.plan === "premium") {
+          setIsPremium(true);
+        } else {
+          setIsPremium(false);
+        }
           navigation.navigate("Home");
         } else {
           alert(data.message || "Invalid username or password.");

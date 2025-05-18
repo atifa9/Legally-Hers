@@ -37,7 +37,7 @@ export default () => {
         return;
       }
 
-      const res = await fetch("http://your wifi ip:5000/api/auth/account-info", {
+      const res = await fetch("http://YOUR WIFI IP:5000/api/auth/account-info", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -108,7 +108,7 @@ export default () => {
 
   const handlePasswordChange = async () => {
     try {
-      const response = await fetch("http://you wifi ip:5000/api/auth/change-password", {
+      const response = await fetch("http://YOUR WIFI IP:5000/api/auth/change-password", {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

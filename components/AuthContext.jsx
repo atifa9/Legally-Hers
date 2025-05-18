@@ -1,9 +1,11 @@
 import React, { createContext, useState, useContext } from 'react';
 
 export const AuthContext = createContext();
+
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isGuest, setIsGuest] = useState(false); 
+  const [isGuest, setIsGuest] = useState(false);
+  const [isPremium, setIsPremium] = useState(false);  // NEW state for premium users
   const [token, setToken] = useState(null);
 
   return (
@@ -12,6 +14,8 @@ export const AuthProvider = ({ children }) => {
       setIsLoggedIn,
       isGuest,
       setIsGuest,
+      isPremium,
+      setIsPremium,
       token,
       setToken
     }}>
@@ -19,5 +23,4 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-
 export const useAuth = () => useContext(AuthContext);
