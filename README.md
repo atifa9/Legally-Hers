@@ -10,7 +10,7 @@
 ## 🔗 Table of Contents
 
 - [🚀 Features](#-features)
--  [🪙 Premium Features](#-Premium Features)
+- [🪙 Premium Features](#-Premium-features)
 - [🛠 Tech Stack](#-tech-stack)
 - [🔐 Authentication & Security](#-authentication--security)
 - [🧠 AI Integration](#-ai-integration)
