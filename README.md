@@ -18,7 +18,6 @@
 - [🔧 Setup Instructions](#-setup-instructions)
 - [📱 UI/UX Highlights](#-uiux-highlights)
 - [🎯 Vision & Impact](#-vision--impact)
-- [🤝 Team & Collaboration](#-team--collaboration)
 
 ---
 
